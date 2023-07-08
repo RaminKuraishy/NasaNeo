@@ -1,8 +1,7 @@
-.App {
-  height: 100%;
-
+body {
   background-size: cover;
-//   background: rgb(0, 2, 20);
+  min-height: 100vh;
+  background: rgb(0, 2, 20);
   background: linear-gradient(
     90deg,
     rgba(0, 2, 20, 1) 0%,
@@ -10,7 +9,7 @@
   );
 }
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
   padding-left: 10px;
   padding-right: 10px;

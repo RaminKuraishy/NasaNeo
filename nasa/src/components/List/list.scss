@@ -22,7 +22,7 @@ p {
   line-height: 1.6;
 }
 
-ul {
+.page-list {
     padding-bottom: 20px;
     margin-bottom: 20px;
 
@@ -34,7 +34,7 @@ ul {
   flex-wrap: wrap;
 }
 
-li {
+.page-list-item {
   position: relative;
   counter-increment: list;
   max-width: 45rem;
@@ -49,7 +49,7 @@ li {
     rgba(7, 20, 50, 1) 0%);
 }
 
-li::before {
+.page-list-item::before {
   content: "";
   display: block;
   width: 100%;
@@ -82,9 +82,11 @@ h3::before {
 }
 
 @media (min-width: 40em) {
-  li {
+  .page-list-item {
     margin: 3rem auto;
     padding: 3rem 2rem 2rem;
+    font-size: 1rem;
+
   }
 
   h3 {
