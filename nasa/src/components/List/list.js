@@ -4,6 +4,7 @@ import "./list.scss";
 const apiKey = process.env.REACT_APP_NASA_KEY;
 const List = props => {
   const [aggregatedData, setAggregatedData] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(true);
   useEffect(() => {
     const startDate = new Date();
     startDate.setDate(1);
@@ -72,6 +73,8 @@ const List = props => {
       `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${apiKey}`
     );
     const data = await res.json();
+    setIsLoaded(false);
+    console.log('loaded');
     const availableDates = Object.keys(data.near_earth_objects).sort();
     let currentDateIndex = 0;
     const dataPerDay = [];
@@ -95,19 +98,19 @@ const List = props => {
     setAggregatedData(dataPerDay);
   }
 
-  if (!aggregatedData) return <div>There is no items</div>;
+  if (!aggregatedData) return <h3 className="page-list-empty">There is no NEO</h3>;
 
   return (
     <div className="card_wrapper">
       <ul className="page-list">
-        {aggregatedData.map((item, key) => {
+        {isLoaded ? <div className="loader"></div> : aggregatedData.map((item, key) => {
           return (
             <li key={key} className="page-list-item">
-              <h3>{item.date}</h3>
-              <p>Diameter: {item.diameterMax}</p>
-              <p>Potentially hazardous NEO: {item.hazardousAsteroidCount}</p>
-              <p>Closest NEO: {item.closestNeo}</p>
-              <p>Fastest NEO: {item.fastestNeo}</p>
+              <h3 className="page-list-title">{item.date}</h3>
+              <p className="page-list-text">Diameter: {item.diameterMax}</p>
+              <p className="page-list-text">Potentially hazardous NEO: {item.hazardousAsteroidCount}</p>
+              <p className="page-list-text">Closest NEO: {item.closestNeo}</p>
+              <p className="page-list-text">Fastest NEO: {item.fastestNeo}</p>
             </li>
           );
         })}
