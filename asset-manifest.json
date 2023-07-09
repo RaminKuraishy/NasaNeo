@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/NasaNeo/static/css/main.a2d36acb.css",
-    "main.js": "/NasaNeo/static/js/main.ac1add7e.js",
+    "main.js": "/NasaNeo/static/js/main.6a58f844.js",
     "index.html": "/NasaNeo/index.html",
     "main.a2d36acb.css.map": "/NasaNeo/static/css/main.a2d36acb.css.map",
-    "main.ac1add7e.js.map": "/NasaNeo/static/js/main.ac1add7e.js.map"
+    "main.6a58f844.js.map": "/NasaNeo/static/js/main.6a58f844.js.map"
   },
   "entrypoints": [
     "static/css/main.a2d36acb.css",
-    "static/js/main.ac1add7e.js"
+    "static/js/main.6a58f844.js"
   ]
 }
