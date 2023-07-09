@@ -74,7 +74,6 @@ const List = props => {
     );
     const data = await res.json();
     setIsLoaded(false);
-    console.log('loaded');
     const availableDates = Object.keys(data.near_earth_objects).sort();
     let currentDateIndex = 0;
     const dataPerDay = [];
